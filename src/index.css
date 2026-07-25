@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Hanken+Grotesk:wght@300;400;500;600;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #faf9f7;
+  --color-surface-dim: #dadad8;
+  --color-surface-bright: #faf9f7;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f3f1;
+  --color-surface-container: #efeeec;
+  --color-surface-container-high: #e9e8e6;
+  --color-surface-container-highest: #e3e2e0;
+  --color-on-surface: #1a1c1b;
+  --color-on-surface-variant: #434843;
+  --color-primary: #061b0e;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1b3022;
+  --color-on-primary-container: #819986;
+  --color-secondary: #755a25;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fdd897;
+  --color-on-secondary-container: #785c28;
+  --color-secondary-fixed: #ffdea7;
+  --color-outline: #737973;
+  --color-outline-variant: #c3c8c1;
+
+  --font-serif: "Libre Caslon Text", serif;
+  --font-sans: "Hanken Grotesk", sans-serif;
+  
+  --spacing-container-max: 1280px;
+  --spacing-gutter: 24px;
+  --spacing-section-gap: 120px;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased overflow-x-hidden;
+  }
+}
