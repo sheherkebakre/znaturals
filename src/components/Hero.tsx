@@ -1,7 +1,18 @@
 import { PlayCircle } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useEffect, useRef } from 'react';
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Video autoplay failed:", error);
+      });
+    }
+  }, []);
+
   return (
     <section className="relative min-h-[90vh] flex flex-col lg:flex-row items-center justify-center overflow-hidden px-5 md:px-16 py-12 lg:py-0">
       <div className="container max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -38,10 +49,12 @@ export function Hero() {
           <div className="absolute -z-10 w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl opacity-50"></div>
           <div className="relative w-full max-w-[500px] aspect-[2/3] rounded-2xl overflow-hidden shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-700 ease-out">
             <video 
+              ref={videoRef}
               autoPlay 
               loop 
               muted 
-              playsInline 
+              playsInline
+              controls={false}
               className="w-full h-full object-cover" 
               src={`${import.meta.env.BASE_URL}hero-video.mp4`} 
             />
