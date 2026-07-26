@@ -43,14 +43,13 @@ export function Hero() {
               muted 
               playsInline 
               className="w-full h-full object-cover" 
-              src="/hero-video.mp4" 
+              src={`${import.meta.env.BASE_URL}hero-video.mp4`} 
             />
           </div>
         </motion.div>
       </div>
       
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-outline">
-        <span className="text-[10px] font-semibold tracking-[0.3em] uppercase opacity-60">Scroll</span>
         <div className="w-[1px] h-12 bg-outline/20 relative overflow-hidden">
           <motion.div 
             animate={{ top: ["-100%", "100%"] }}
