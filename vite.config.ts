@@ -5,7 +5,8 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: './', // Enables relative paths for assets to support GitHub Pages
+    // Automatically set the base path for GitHub Pages deployment
+    base: process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
